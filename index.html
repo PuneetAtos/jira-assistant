@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jira Ticket Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f6f8;
+      color: #333;
+    }
+    .header {
+      background: #1f8844;
+      color: white;
+      padding: 24px 32px;
+      text-align: center;
+    }
+    .header h1 { margin: 0 0 8px; font-size: 24px; }
+    .header p { margin: 0; opacity: 0.85; font-size: 14px; }
+    .content {
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .content p { font-size: 16px; line-height: 1.6; color: #555; }
+    .badge {
+      display: inline-block;
+      background: #e8f5ec;
+      color: #1f8844;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Jira Ticket Assistant</h1>
+    <p>Ask about tickets, search issues, or get project details</p>
+  </div>
+
+  <div class="content">
+    <p>Click the chat icon in the bottom-right corner to start a conversation with the Jira Ticket Assistant.</p>
+    <p>Try asking:</p>
+    <p><strong>"Show me all open issues in SCRUM"</strong></p>
+    <p><strong>"Get details of SCRUM-1"</strong></p>
+    <p><strong>"Tell me about the SCRUM project"</strong></p>
+    <span class="badge">Powered by Ema</span>
+  </div>
+
+  <!-- Ema Chat SDK -->
+  <script>
+    (function(window, document, scriptTag, objectName, scriptSrc, scriptElement, firstScriptTag) {
+      window[objectName] = function() {
+        (window[objectName].q = window[objectName].q || []).push(arguments)
+      }
+      scriptElement = document.createElement(scriptTag)
+      firstScriptTag = document.getElementsByTagName(scriptTag)[0];
+      scriptElement.id = "EmaChat";
+      scriptElement.src = scriptSrc;
+      scriptElement.async = 1;
+      scriptElement.type = "module";
+      firstScriptTag.parentNode.insertBefore(scriptElement, firstScriptTag);
+    })(window, document, "script", "EmaChat", "https://chatbot.ema.co/sdk/widget.js");
+
+    window.EmaChat("init", {
+      "personaId": "e1801534-0573-4770-9615-d3ae07fdaad1",
+      "defaultOpen": false
+    });
+  </script>
+
+</body>
+</html>
